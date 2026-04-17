@@ -14,7 +14,8 @@ int restar(int a, int b) {
 
 /* ── multiplicar — implementar en feature/mi-funcion ─────────────────────── */
 //Multiplicar funciona de la misma manera que sumar y restar, pero usando el operador de multiplicación (*).
-int multiplicar(int a, int b) {
+//El algoritmo de multiplicar funciona sumando 'a' veces 'b'.
+int multiplicar(const int a, const int b) {
     return a * b;
 }
 
