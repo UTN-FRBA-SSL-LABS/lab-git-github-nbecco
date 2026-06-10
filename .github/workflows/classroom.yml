@@ -283,4 +283,7 @@ jobs:
       - name: Resultado autograding
         if: always()
         uses: education/autograding@v1
+        #AGREGUE ESTAS DOS LINEAS DE DEBAJO (CAMBIO DE GEMINI PARA ARREGLAR EL AUTOGRANDING)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
