@@ -277,13 +277,14 @@ jobs:
             echo "   corregí los errores y volvé a hacer push."
             exit 1
           fi
+  
+      #AGREGUE ESTAS DOS LINEAS DE DEBAJO (CAMBIO DE GEMINI PARA ARREGLAR EL AUTOGRANDING)
+      - name: Autenticar gh CLI globalmente
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
       # ── Reporte a GitHub Classroom ─────────────────────────────────
 
       - name: Resultado autograding
         if: always()
         uses: education/autograding@v1
-        #AGREGUE ESTAS DOS LINEAS DE DEBAJO (CAMBIO DE GEMINI PARA ARREGLAR EL AUTOGRANDING)
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         continue-on-error: true
